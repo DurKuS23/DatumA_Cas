@@ -43,5 +43,26 @@ namespace Library
 
             return true;
         }
+
+        static public int PocetDni(DateTime birthday, int roku)
+        {
+            int PocetDnu = 0;
+
+            DateTime Today = DateTime.Today;
+
+            //7.11. 311 dni  - od mych narozenin 288
+
+            // Birthday = 23.01.2005
+            // Today = 7.11.2022
+            // roku = 17
+            DateTime BirthdayAge = birthday.AddYears(roku);
+
+            if (Today > BirthdayAge)
+            {
+                PocetDnu = ((Today.DayOfYear) - (BirthdayAge.DayOfYear));
+            }
+
+            return PocetDnu;
+        }
     }
 }
